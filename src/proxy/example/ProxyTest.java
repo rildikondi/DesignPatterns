@@ -32,7 +32,7 @@ public class ProxyTest {
     }
 
     @Test
-    public void orderProxyTotal() throws Exception {
+    public void testOrderProxyTotal() throws Exception {
         Db.store(new ProductData("Wheaties", 349, "wheaties"));
         Db.store(new ProductData("Crest", 258, "crest"));
         ProductProxy wheaties = new ProductProxy("wheaties");

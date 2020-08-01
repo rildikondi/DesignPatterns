@@ -104,11 +104,11 @@ public class Db {
     buildItemInsertionStatement(ItemData id) throws SQLException {
         String sql = "INSERT INTO Items(orderId,quantity,sku) " +
                 "VALUES (?, ?, ?)";
-        PreparedStatement command = connection.prepareStatement(sql);
-        command.setInt(1, id.orderId);
-        command.setInt(2, id.qty);
-        command.setString(3, id.sku);
-        return command;
+        PreparedStatement statement = connection.prepareStatement(sql);
+        statement.setInt(1, id.orderId);
+        statement.setInt(2, id.qty);
+        statement.setString(3, id.sku);
+        return statement;
     }
 
     public static ItemData[] getItemsForOrder(int orderId) throws Exception {
